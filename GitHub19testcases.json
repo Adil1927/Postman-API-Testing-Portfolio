@@ -1,0 +1,220 @@
+{
+  "info": {
+    "_postman_id": "0568bf4a-4a22-47da-a80b-bfa6fd1ca409",
+    "name": "GitHub Collection with Test Cases",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48207235",
+    "_collection_link": "https://go.postman.co/collection/48207235-0568bf4a-4a22-47da-a80b-bfa6fd1ca409?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Post-Create a repository for the authenticated user",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set(\"pname\", \"APItesting1\");\r\npm.collectionVariables.set(\"pdesc\", \"This is my APItesting Project1\");\r\npm.collectionVariables.set(\"psec\", \"false\");"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Post-checking the response code\", function()\n{\n    const rcode = pm.response.code;\n    pm.expect(201).eql(rcode)\n}\n)\n\npm.test(\"Post-checking the response status\", function()\n{\n    const rstatus = pm.response.status;\n    pm.expect(\"Created\").eql(rstatus)\n}\n)\n\npm.test(\"Post-checking the response body name\", function()\n{\n    const rname = pm.response.json();\n    pm.expect(pm.collectionVariables.get(\"pname\")).eql(rname.name)\n}\n)\n\npm.test(\"Post-checking the response header\", function()\n{\n    const rheader = pm.response.headers;\n    pm.expect(\"github.com\").eql(rheader.get(\"Server\"))\n}\n)\n\npm.test(\"Post-checking the response time\", function()\n{\n    const rtime = pm.response.responseTime;\n    pm.expect(3000).above(rtime)\n}\n)"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Gtoken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"{{pname}}\",\r\n    \"description\": \"{{pdesc}}\",\r\n    \"private\": \"{{psec}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseURL}}/user/repos",
+          "host": [
+            "{{BaseURL}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Patch-Update a repository",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Patch-checking the response code\", function()\r\n{\r\n    const rcode = pm.response.code;\r\n    pm.expect(200).eql(rcode)\r\n}\r\n)\r\n\r\npm.test(\"Patch-checking the response status\", function()\r\n{\r\n    const rstatus = pm.response.status;\r\n    pm.expect(\"OK\").eql(rstatus)\r\n}\r\n)\r\n\r\npm.test(\"Patch-checking the response body name\", function()\r\n{\r\n    const rname = pm.response.json();\r\n    pm.expect(pm.collectionVariables.get(\"pname\")).eql(rname.name)\r\n}\r\n)\r\n\r\npm.test(\"Patch-checking the response header\", function()\r\n{\r\n    const rheader = pm.response.headers;\r\n    pm.expect(\"github.com\").eql(rheader.get(\"Server\"))\r\n}\r\n)\r\n\r\npm.test(\"Patch-checking the response time\", function()\r\n{\r\n    const rtime = pm.response.responseTime;\r\n    pm.expect(3000).above(rtime)\r\n}\r\n)"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Gtoken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"private\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseURL}}/repos/{{UN}}/{{pname}}",
+          "host": [
+            "{{BaseURL}}"
+          ],
+          "path": [
+            "repos",
+            "{{UN}}",
+            "{{pname}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get-Get a repository",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Get-checking the response code\", function()\r\n{\r\n    const rcode = pm.response.code;\r\n    pm.expect(200).eql(rcode)\r\n}\r\n)\r\n\r\npm.test(\"Get-checking the response status\", function()\r\n{\r\n    const rstatus = pm.response.status;\r\n    pm.expect(\"OK\").eql(rstatus)\r\n}\r\n)\r\n\r\npm.test(\"Get-checking the response body name\", function()\r\n{\r\n    const rname = pm.response.json();\r\n    pm.expect(pm.collectionVariables.get(\"pname\")).eql(rname.name)\r\n}\r\n)\r\n\r\npm.test(\"Get-checking the response header\", function()\r\n{\r\n    const rheader = pm.response.headers;\r\n    pm.expect(\"github.com\").eql(rheader.get(\"Server\"))\r\n}\r\n)\r\n\r\npm.test(\"Get-checking the response time\", function()\r\n{\r\n    const rtime = pm.response.responseTime;\r\n    pm.expect(3000).above(rtime)\r\n}\r\n)"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Gtoken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BaseURL}}/repos/{{UN}}/{{pname}}",
+          "host": [
+            "{{BaseURL}}"
+          ],
+          "path": [
+            "repos",
+            "{{UN}}",
+            "{{pname}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete-Delete a repository",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Delete-checking the response code\", function()\r\n{\r\n    const rcode = pm.response.code;\r\n    pm.expect(204).eql(rcode)\r\n}\r\n)\r\n\r\npm.test(\"Delete-checking the response status\", function()\r\n{\r\n    const rstatus = pm.response.status;\r\n    pm.expect(\"No Content\").eql(rstatus)\r\n}\r\n)\r\n\r\n\r\npm.test(\"Delete-checking the response header\", function()\r\n{\r\n    const rheader = pm.response.headers;\r\n    pm.expect(\"github.com\").eql(rheader.get(\"Server\"))\r\n}\r\n)\r\n\r\npm.test(\"Delete-checking the response time\", function()\r\n{\r\n    const rtime = pm.response.responseTime;\r\n    pm.expect(3000).above(rtime)\r\n}\r\n)"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Gtoken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BaseURL}}/repos/{{UN}}/{{pname}}",
+          "host": [
+            "{{BaseURL}}"
+          ],
+          "path": [
+            "repos",
+            "{{UN}}",
+            "{{pname}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "pname",
+      "value": ""
+    },
+    {
+      "key": "pdesc",
+      "value": ""
+    },
+    {
+      "key": "psec",
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,519 @@
+{
+  "info": {
+    "_postman_id": "66560315-d2e5-4519-b7cf-c722d90bcf3c",
+    "name": "Sample Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48207235",
+    "_collection_link": "https://go.postman.co/collection/48207235-66560315-d2e5-4519-b7cf-c722d90bcf3c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get-Getting Multiple Employees Data",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{Myurl}}/api/users?page=2",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get-One Employee Data",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{Myurl}}/api/users/2",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get-Invalid Employee Data",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{Myurl}}/api/users/200",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "200"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get-List of Resources in the Application",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{Myurl}}/api/unknown",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "unknown"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get-One Employee list",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{Myurl}}/api/unknown/3",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "unknown",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get-Invalid Employee list",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{Myurl}}/api/unknown/452",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "unknown",
+            "452"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create an Employee into the server",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"EmpName\": \"Adil\",\r\n    \"EmpDesg\": \"Manager\",\r\n    \"EmpSalary\": 10000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Myurl}}/api/users",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Employee data",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "reqres_a9a46f6607784fa98f01cdbd8786d64f",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"EmpGender\": \"Male\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Myurl}}/api/users/2",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete one Employee",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Mycode}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{Mycode}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{Myurl}}/api/users/2",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post-Registration Successfull",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Mycode}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{Mycode}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"pistol\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Myurl}}/api/register",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post Invalid Registration",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Mycode}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{Mycode}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"adilahmed6@gmail.com\",\r\n    \"password\": \"pistol\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Myurl}}/api/register",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post login successfull",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Mycode}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{Mycode}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"cityslicka\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Myurl}}/api/login",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post invalid login",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Mycode}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{Mycode}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"eve.5434holt@reqres.in\",\r\n    \"password\": \"dfghjjb\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Myurl}}/api/login",
+          "host": [
+            "{{Myurl}}"
+          ],
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
